@@ -1,0 +1,18 @@
+coordinates = importdata('/home/sulantha/Desktop/leftVertice_coor.csv');
+lx = coordinates(1:40962,1);
+ly = coordinates(1:40962,2);
+lz = coordinates(1:40962,3);
+zlx = subsampleMat(lx, [100 1]);
+zly = subsampleMat(ly, [100 1]);
+zlz = subsampleMat(lz, [100 1]);
+coordinates = importdata('/home/sulantha/Desktop/rightVertices.csv');
+rx = coordinates(1:40962,1);
+ry = coordinates(1:40962,2);
+rz = coordinates(1:40962,3);
+zrx = subsampleMat(rx, [100 1]);
+zry = subsampleMat(ry, [100 1]);
+zrz = subsampleMat(rz, [100 1]);
+ax = [zlx;zrx];
+ay = [zly;zry];
+az = [zlz;zrz];
+csvwrite('/home/sulantha/bin/MatlabScripts/Plotting_Network_3D/coords_h.csv' , [ax ay az]);

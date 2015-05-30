@@ -1,0 +1,16 @@
+##Linear Model
+
+lmo2 = performLinearModel('/data/data03/sulantha/LinearModelAnalysis_Mar2015/Filterd_MainTable.csv', 'Hypometabolism_left_pd~av45_bl_suvr*PTAU181P_bl+Age_bl+PTGENDER+APOE_bin', {'Hypometabolism_left_pd'}, 40962, 0, {'PTGENDER','APOE_bin'}, 'strcmp(mdt.diagnosis, ''CN'')');
+
+
+Paired T-test
+[h ,p ,ci ,t] = performPairedTtest('/data/data03/sulantha/LinearModelAnalysis_Mar2015/Filterd_MainTable.csv','Fdg_bl_left', 'Fdg_fu_left', 'strcmp(mdt.diagnosis, ''AD'')');
+
+
+Two Sample T-test
+[h, p, ci, t] = performTtest('/data/data03/sulantha/LinearModelAnalysis_Mar2015/Filterd_MainTable.csv', 'Fdg_bl_left', 'diagnosis', 'CN', 'AD');
+
+
+Group Means
+
+
